@@ -45,7 +45,7 @@ var app = angular
         icon: "../img/map-icons/1.png"
       },
       name: "Shuttle Stop 1",
-      description: "Main Entrance of Village Square"
+      description: "Village Square Main Entrance"
     };
     $scope.stop2 = {
       id: 2,
@@ -58,7 +58,7 @@ var app = angular
         icon: "../img/map-icons/2.png"
       },
       name: "Shuttle Stop 2",
-      description: "Main Entrance of Village Center"
+      description: "Door 1 at Village Center"
     };
     $scope.stop3 = {
       id: 3,
@@ -71,7 +71,7 @@ var app = angular
         icon: "../img/map-icons/3.png"
       },
       name: "Shuttle Stop 3",
-      description: "Near 526 Dogwood Drive"
+      description: "Back corner of 531 Dogwood Drive"
     };
     $scope.stop4 = {
       id: 4,
@@ -84,7 +84,7 @@ var app = angular
         icon: "../img/map-icons/4.png"
       },
       name: "Shuttle Stop 4",
-      description: "Across from 583 Dogwood"
+      description: "Corner of 558 Dogwood Drive"
     };
     $scope.stop5 = {
       id: 5,
@@ -97,7 +97,7 @@ var app = angular
         icon: "../img/map-icons/5.png"
       },
       name: "Shuttle Stop 5",
-      description: "Village Center, Bailey Street Entrance"
+      description: "Bailey Street"
     };
     $scope.stop6 = {
       id: 6,
@@ -123,7 +123,7 @@ var app = angular
         icon: "../img/map-icons/7.png"
       },
       name: "Shuttle Stop 7",
-      description: "Main Entrance of the Village Commons"
+      description: "Door 7 at Village Commons"
     };
     $scope.stop8 = {
       id: 8,
@@ -136,7 +136,7 @@ var app = angular
         icon: "../img/map-icons/8.png"
       },
       name: "Shuttle Stop 8",
-      description: "Terrace Entrance of the Village Commons"
+      description: "Terrace Entrance"
     };
     $scope.stop9 = {
       id: 9,
@@ -162,7 +162,7 @@ var app = angular
         icon: "../img/map-icons/10.png"
       },
       name: "Shuttle Stop 10",
-      description: "Across from Aspen"
+      description: "Redwood Road (near Aspen Avenue)"
     };
     $scope.stop11 = {
       id: 11,
@@ -175,7 +175,7 @@ var app = angular
         icon: "../img/map-icons/11.png"
       },
       name: "Shuttle Stop 11",
-      description: "Bench on Redwood Road"
+      description: "Redwood Road"
     };
     $scope.stop12 = {
       id: 12,
@@ -201,7 +201,7 @@ var app = angular
         icon: "../img/map-icons/13.png"
       },
       name: "Shuttle Stop 13",
-      description: "Bench Behind 571 on Locust Lane, next to the Gardens"
+      description: "Locust Lane next to the Gardens"
     };
     $scope.stop14 = {
       id: 14,
@@ -214,7 +214,7 @@ var app = angular
         icon: "../img/map-icons/14.png"
       },
       name: "Shuttle Stop 14",
-      description: "At the loop of Willow Way"
+      description: "The Y on Willow Way"
     };
     $scope.stop15 = {
       id: 15,
@@ -227,7 +227,7 @@ var app = angular
         icon: "../img/map-icons/15.png"
       },
       name: "Shuttle Stop 15",
-      description: "Across from 670, on Willow Way"
+      description: "Across from 670 on Willow Way"
     };
     $scope.stop16 = {
       id: 16,
@@ -253,7 +253,7 @@ var app = angular
         icon: "../img/map-icons/17.png"
       },
       name: "Shuttle Stop 17",
-      description: "Stop Sign on Willow Way and Messiah Circle"
+      description: "Gazebo on Willow Way and Messiah Circle"
     };
     $scope.stop18 = {
       id: 18,
@@ -266,7 +266,7 @@ var app = angular
         icon: "../img/map-icons/18.png"
       },
       name: "Shuttle Stop 18",
-      description: "Village Center Chapel Entrance"
+      description: "Door 54 Chapel Entrance"
     };
 
     //Load JSON Data
