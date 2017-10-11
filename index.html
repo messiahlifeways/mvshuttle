@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Refresh Rate 
+       This will later be replaced with Angular Interval, so that only the data refreshes instead of full page -->
+  <meta http-equiv="refresh" content="30"/>
+  <title>Messiah Village Shuttle Tracker</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow:hidden;
+    }
+    .angular-google-map-container {
+      height: 100vh;
+    }
+    .hide {
+      display: none;
+    }
+    .bottom-bar {
+      background: #f78200;
+      color: #ffffff;
+      height: 80px;
+      font-family: "Calibri", "Arial", sans-serif;
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+    }
+    .bottom-bar > h2 {
+      display: flex;
+      align-items: center;
+    }
+    .bottom-bar > h2 > img {
+      height: 60px;
+      padding: 0 10px;
+      border-right: 1px solid white;
+      margin: 10px;
+    }
+    
+    .intro{
+      position:fixed;
+      top:0;
+      left:0;
+      height:100vh;
+      width:100vw;
+      overflow:hidden;
+      background:#f78200;
+      transition:.3s;
+      animation: intro 10s;
+      animation-iteration-count:1;
+    }
+    
+    @keyframes intro{
+      0%{
+        opacity:100%;
+      }
+      90%{
+        opacity:100%
+      }
+      95%{
+        opacity:0%
+      }
+      100%{
+        display:none;
+      }
+    }
+  </style>
+</head>
+
+<!-- initializes the mvShuttle Angular App -->
+<body ng-app="mvShuttle">
+  <div class="intro"></div>
+  <!-- initializes mainCtrl Controller in Angular -->
+  <main ng-controller="mainCtrl">
+    
+    <!-- Debug Info, this is hidden on the page -->
+    <div class="hide">
+      <h3>Troubleshooting...</h3> 
+      Shuttle Lat: {{shuttleLat}}<br /> 
+      Shuttle Long: {{shuttleLong}}<br /> 
+      Map Data: {{map}}<br /> 
+      Map Center: {{map.center}} <br /> 
+      Map zoom: {{map.zoom}} <br /> 
+      Shuttle Data: {{shuttleBus}} <br /> 
+      Shuttle ID: {{shuttleBus.id}}<br />
+      Shuttle Coords: {{shuttleBus.coords}}<br /> 
+      Shuttleicon:
+      {{shuttleBus.options.icon}}<br />
+      {{stop1.name}}
+    </div>
+    <!-- End Debug -->
+
+    <!-- Places Map on Page -->
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+      
+      <!-- Marker icon for Shuttle -->
+      <ui-gmap-marker idKey='shuttleBus.id' coords='shuttleBus.coords' options='shuttleBus.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div>
+            <h4 ng-bind="shuttleBus.name"></h4>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <!-- End Shuttle Marker -->      
+      
+      <!-- Shuttle Stop Markers Start -->
+      <!-- This will be be refactored with ng-repeat -->
+      <ui-gmap-marker idKey='stop1.id' coords='stop1.coords' options='stop1.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4>{{stop1.name}}</h4>
+            <p>{{stop1.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop2.id' coords='stop2.coords' options='stop2.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop2.name}}</h4>
+            <p ng-cloak>{{stop2.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop3.id' coords='stop3.coords' options='stop3.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop3.name}}</h4>
+            <p ng-cloak>{{stop3.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop4.id' coords='stop4.coords' options='stop4.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop4.name}}</h4>
+            <p ng-cloak>{{stop4.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop5.id' coords='stop5.coords' options='stop5.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop5.name}}</h4>
+            <p ng-cloak>{{stop5.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop6.id' coords='stop6.coords' options='stop6.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop6.name}}</h4>
+            <p ng-cloak>{{stop6.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop7.id' coords='stop7.coords' options='stop7.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop7.name}}</h4>
+            <p ng-cloak>{{stop7.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop8.id' coords='stop8.coords' options='stop8.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop8.name}}</h4>
+            <p ng-cloak>{{stop8.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop9.id' coords='stop9.coords' options='stop9.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop9.name}}</h4>
+            <p ng-cloak>{{stop9.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop10.id' coords='stop10.coords' options='stop10.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop10.name}}</h4>
+            <p ng-cloak>{{stop10.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop11.id' coords='stop11.coords' options='stop11.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop11.name}}</h4>
+            <p ng-cloak>{{stop11.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop12.id' coords='stop12.coords' options='stop12.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop12.name}}</h4>
+            <p ng-cloak>{{stop12.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop13.id' coords='stop13.coords' options='stop13.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop13.name}}</h4>
+           <p ng-cloak>{{stop13.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop14.id' coords='stop14.coords' options='stop14.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop14.name}}</h4>
+            <p ng-cloak>{{stop14.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop15.id' coords='stop15.coords' options='stop15.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop15.name}}</h4>
+            <p ng-cloak>{{stop15.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop16.id' coords='stop16.coords' options='stop16.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div class="ng-cloak">
+            <h4 ng-cloak>{{stop16.name}}</h4>
+            <p ng-cloak>{{stop16.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop17.id' coords='stop17.coords' options='stop17.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div>
+            <h4 ng-cloak>{{stop17.name}}</h4>
+            <p ng-cloak>{{stop17.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <ui-gmap-marker idKey='stop18.id' coords='stop18.coords' options='stop18.options'>
+        <ui-gmap-window options="windowOptions" closeClick="closeClick()">
+          <div>
+            <h4 ng-cloak>{{stop18.name}}</h4>
+            <p ng-cloak>{{stop18.description}}</p>
+          </div>
+        </ui-gmap-window>
+      </ui-gmap-marker>
+      <!-- End Shuttle Stops -->
+    
+    </ui-gmap-google-map>
+    <!-- End Map -->
+    
+  </main>
+  
+  <!-- Logo -->
+  <footer class="bottom-bar">
+    <h2><img src='img/logo.png' /> Shuttle<br /> Tracker</h2>
+  </footer>
+  
+  
+  <!-- AngularJS Codebase -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  
+  <!-- Angular-Google-Maps Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-simple-logger/0.1.7/angular-simple-logger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.4.1/angular-google-maps.min.js"></script>
+  
+  <!-- App.js -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
