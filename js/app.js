@@ -308,7 +308,8 @@ var app = angular
           //This URL is a combo of a CORS proxy url and the ClearPathGPS API URL
           //Due JS secures measures, I could not easily do cross domain scripting, CORS corrects that via proxy
           //url:"https://cors-anywhere.herokuapp.com/https://api.clearpathgps.com/events/Data.json?user=mlstorage@messiahlifeways.info&password=hcQWVhpp&group=tracking&limit=1",
-          url:"https://galvanize-cors-proxy.herokuapp.com/https://api.clearpathgps.com/events/Data.json?user=mlstorage@messiahlifeways.info&password=hcQWVhpp&group=tracking&limit=1",
+          //url:"https://galvanize-cors-proxy.herokuapp.com/https://api.clearpathgps.com/events/Data.json?user=mlstorage@messiahlifeways.info&password=hcQWVhpp&group=tracking&limit=1",
+          url:"https://vast-citadel-13407.herokuapp.com/https://api.clearpathgps.com/events/Data.json?user=mlstorage@messiahlifeways.info&password=hcQWVhpp&group=tracking&limit=1",
           method: "GET"
         });
       }
