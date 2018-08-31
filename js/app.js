@@ -63,209 +63,53 @@ var app = angular
     $scope.stop3 = {
       id: 3,
       coords: {
-        latitude: 40.184228,
-        longitude: -76.978736
+        latitude: 40.185411,
+        longitude: -76.978703
       },
       options: {
         draggable: false,
         icon: "../img/map-icons/3.png"
       },
       name: "Shuttle Stop 3",
-      description: "Back corner of 531 Dogwood Drive"
+      description: "Bailey Street"
     };
     $scope.stop4 = {
       id: 4,
-      coords: {
-        latitude: 40.183977,
-        longitude: -76.980155
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/4.png"
-      },
-      name: "Shuttle Stop 4",
-      description: "Corner of 558 Dogwood Drive"
-    };
-    $scope.stop5 = {
-      id: 5,
-      coords: {
-        latitude: 40.185411,
-        longitude: -76.978703
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/5.png"
-      },
-      name: "Shuttle Stop 5",
-      description: "Bailey Street"
-    };
-    $scope.stop6 = {
-      id: 6,
-      coords: {
-        latitude: 40.185292,
-        longitude: -76.980324
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/6.png"
-      },
-      name: "Shuttle Stop 6",
-      description: "Between 584 and 586 Locust Lane"
-    };
-    $scope.stop7 = {
-      id: 7,
       coords: {
         latitude: 40.182983,
         longitude: -76.982276
       },
       options: {
         draggable: false,
-        icon: "../img/map-icons/7.png"
+        icon: "../img/map-icons/4.png"
       },
-      name: "Shuttle Stop 7",
+      name: "Shuttle Stop 4",
       description: "Door 7 at Village Commons"
     };
-    $scope.stop8 = {
-      id: 8,
+    $scope.stop5 = {
+      id: 5,
       coords: {
         latitude: 40.183292,
         longitude: -76.98304
       },
       options: {
         draggable: false,
-        icon: "../img/map-icons/8.png"
+        icon: "../img/map-icons/5.png"
       },
-      name: "Shuttle Stop 8",
+      name: "Shuttle Stop 5",
       description: "Terrace Entrance"
     };
-    $scope.stop9 = {
-      id: 9,
-      coords: {
-        latitude: 40.182733,
-        longitude: -76.983393
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/9.png"
-      },
-      name: "Shuttle Stop 9",
-      description: "Maple Mall"
-    };
-    $scope.stop10 = {
-      id: 10,
-      coords: {
-        latitude: 40.182181,
-        longitude: -76.98333
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/10.png"
-      },
-      name: "Shuttle Stop 10",
-      description: "Redwood Road (near Aspen Avenue)"
-    };
-    $scope.stop11 = {
-      id: 11,
-      coords: {
-        latitude: 40.181684,
-        longitude: -76.983871
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/11.png"
-      },
-      name: "Shuttle Stop 11",
-      description: "Redwood Road"
-    };
-    $scope.stop12 = {
-      id: 12,
-      coords: {
-        latitude: 40.182116,
-        longitude: -76.982557
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/12.png"
-      },
-      name: "Shuttle Stop 12",
-      description: "Ginko Grove"
-    };
-    $scope.stop13 = {
-      id: 13,
-      coords: {
-        latitude: 40.184325,
-        longitude: -76.980904
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/13.png"
-      },
-      name: "Shuttle Stop 13",
-      description: "Locust Lane next to the Gardens"
-    };
-    $scope.stop14 = {
-      id: 14,
-      coords: {
-        latitude: 40.186669,
-        longitude: -76.980273
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/14.png"
-      },
-      name: "Shuttle Stop 14",
-      description: "The Y on Willow Way"
-    };
-    $scope.stop15 = {
-      id: 15,
-      coords: {
-        latitude: 40.187545,
-        longitude: -76.978541
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/15.png"
-      },
-      name: "Shuttle Stop 15",
-      description: "Across from 670 on Willow Way"
-    };
-    $scope.stop16 = {
-      id: 16,
-      coords: {
-        latitude: 40.187698,
-        longitude: -76.979093
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/16.png"
-      },
-      name: "Shuttle Stop 16",
-      description: "Across from 663 Willow Way"
-    };
-    $scope.stop17 = {
-      id: 17,
-      coords: {
-        latitude: 40.185786,
-        longitude: -76.980072
-      },
-      options: {
-        draggable: false,
-        icon: "../img/map-icons/17.png"
-      },
-      name: "Shuttle Stop 17",
-      description: "Gazebo on Willow Way and Messiah Circle"
-    };
-    $scope.stop18 = {
-      id: 18,
+    $scope.stop6 = {
+      id: 6,
       coords: {
         latitude: 40.186719,
         longitude: -76.978606
       },
       options: {
         draggable: false,
-        icon: "../img/map-icons/18.png"
+        icon: "../img/map-icons/6.png"
       },
-      name: "Shuttle Stop 18",
+      name: "Shuttle Stop 6",
       description: "Door 54 Chapel Entrance"
     };
 
