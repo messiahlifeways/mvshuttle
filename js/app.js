@@ -60,6 +60,37 @@ var app = angular
       name: "Shuttle Stop 2",
       description: "Door 1 at Village Center"
     };
+    
+    $scope.stop3 = {
+      id: 3,
+      coords: {
+        latitude: 40.182983,
+        longitude: -76.982276
+      },
+      options: {
+        draggable: false,
+        icon: "../img/map-icons/3.png"
+      },
+      name: "Shuttle Stop 3",
+      description: "Door 7 at Village Commons"
+    };
+    
+    $scope.stop4 = {
+      id: 4,
+      coords: {
+        latitude: 40.183292,
+        longitude: -76.98304
+      },
+      options: {
+        draggable: false,
+        icon: "../img/map-icons/4.png"
+      },
+      name: "Shuttle Stop 4",
+      description: "Terrace Entrance"
+    };
+    //Pre 4/27/2021
+    //EDIT stops 3 and 6 removed, 4 becomes stop 3, 5 becomes stop 4
+    /*
     $scope.stop3 = {
       id: 3,
       coords: {
@@ -73,6 +104,7 @@ var app = angular
       name: "Shuttle Stop 3",
       description: "Bailey Street"
     };
+    
     $scope.stop4 = {
       id: 4,
       coords: {
@@ -100,7 +132,6 @@ var app = angular
       description: "Terrace Entrance"
     };
     
-    /*
     $scope.stop6 = {
       id: 6,
       coords: {
