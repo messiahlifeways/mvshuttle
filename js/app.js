@@ -99,6 +99,8 @@ var app = angular
       name: "Shuttle Stop 5",
       description: "Terrace Entrance"
     };
+    
+    /*
     $scope.stop6 = {
       id: 6,
       coords: {
@@ -112,7 +114,8 @@ var app = angular
       name: "Shuttle Stop 6",
       description: "Door 54 Chapel Entrance"
     };
-
+    */
+    
     //Load JSON Data
     GetData.get().then(function(gpsData) {
       //Pulls the data needed out of JSON and stores in variable
